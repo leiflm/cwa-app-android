@@ -31,12 +31,12 @@
             <TextView
                 android:id="@+id/main_card_header_headline"
                 style="@style/headline5"
+                android:accessibilityHeading="true"
                 android:layout_width="@dimen/match_constraint"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/spacing_small"
                 android:layout_marginEnd="@dimen/spacing_small"
-                android:accessibilityHeading="true"
-                android:text="@string/main_qr_contact_card_headline"
+                android:text="@string/main_about_headline"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/main_card_header_icon_end"
                 app:layout_constraintStart_toEndOf="@+id/main_card_header_icon"
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_normal"
             android:paddingBottom="@dimen/spacing_tiny"
-            android:text="@string/main_qr_contact_card_body"
+            android:text="@string/main_about_body"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/main_card_header" />

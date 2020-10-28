@@ -29,6 +29,9 @@ object SettingsRepository {
     val isBackgroundJobEnabled = MutableLiveData(true)
     val isBackgroundPriorityEnabled = MutableLiveData(false)
     val manualKeyRetrievalTime = MutableLiveData<Long>()
+    val qrContactCardFirstName = MutableLiveData<String>()
+    val qrContactCardLastName = MutableLiveData<String>()
+    val qrContactCardAddress = MutableLiveData<String>()
 
     /**
      * Get the current notifications state. Only relevant for the ui.
@@ -134,5 +137,50 @@ object SettingsRepository {
     fun refreshBackgroundPriorityEnabled(context: Context) {
         isBackgroundPriorityEnabled.value =
             PowerManagementHelper.isIgnoringBatteryOptimizations(context)
+    }
+
+    /**
+     * Set the qr contact first name
+     */
+    fun updateQRContactCardFirstName(value: String) {
+        LocalData.qrContactCardFirstName(value)
+        refreshQRContactCardFirstName()
+    }
+
+    /**
+     * Refresh the qr contact first name
+     */
+    fun refreshQRContactCardFirstName() {
+        qrContactCardFirstName.value = LocalData.qrContactCardFirstName()
+    }
+
+    /**
+     * Set the qr contact last name
+     */
+    fun updateQRContactCardLastName(value: String) {
+        LocalData.qrContactCardLastName(value)
+        refreshQRContactCardLastName()
+    }
+
+    /**
+     * Refresh the qr contact last name
+     */
+    fun refreshQRContactCardLastName() {
+        qrContactCardLastName.value = LocalData.qrContactCardLastName()
+    }
+
+    /**
+     * Set the qr contact address
+     */
+    fun updateQRContactCardAddress(value: String) {
+        LocalData.qrContactCardAddress(value)
+        refreshQRContactCardAddress()
+    }
+    
+    /**
+     * Refresh the qr contact address
+     */
+    fun refreshQRContactCardAddress() {
+        qrContactCardAddress.value = LocalData.qrContactCardAddress()
     }
 }

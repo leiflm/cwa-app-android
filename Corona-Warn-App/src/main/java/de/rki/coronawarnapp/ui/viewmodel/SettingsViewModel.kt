@@ -47,6 +47,27 @@ class SettingsViewModel : ViewModel() {
     val manualKeyRetrievalTime: LiveData<Long> = SettingsRepository.manualKeyRetrievalTime
 
     /**
+     * Update the QR contact card's first name value
+     *
+     * @see SettingsRepository.qrContactCardFirstName
+     */
+    val qrContactCardFirstName: LiveData<String> = SettingsRepository.qrContactCardFirstName
+
+    /**
+     * Update the QR contact card's last name value
+     *
+     * @see SettingsRepository.qrContactCardLastName
+     */
+    val qrContactCardLastName: LiveData<String> = SettingsRepository.qrContactCardLastName
+
+    /**
+     * Update the QR contact card's address value
+     *
+     * @see SettingsRepository.qrContactCardAddress
+     */
+    val qrContactCardAddress: LiveData<String> = SettingsRepository.qrContactCardAddress
+
+    /**
      * Refresher and toggles for settings
      * - Notifications overall
      *  - Risk updates
@@ -131,5 +152,44 @@ class SettingsViewModel : ViewModel() {
 
     fun refreshBackgroundPriorityEnabled(context: Context) {
         SettingsRepository.refreshBackgroundPriorityEnabled(context)
+    }
+
+    /**
+     * Update QR contact card's first name
+     *
+     * @param value
+     */
+    fun updateQRContactCardFirstName(value: String) {
+        SettingsRepository.updateQRContactCardFirstName(value)
+    }
+
+    fun refreshQRContactCardFirstName() {
+        SettingsRepository.refreshQRContactCardFirstName()
+    }
+
+    /**
+     * Update QR contact card's last name
+     *
+     * @param value
+     */
+    fun updateQRContactCardLastName(value: String) {
+        SettingsRepository.updateQRContactCardLastName(value)
+    }
+
+    fun refreshQRContactCardLastName() {
+        SettingsRepository.refreshQRContactCardLastName()
+    }
+
+    /**
+     * Update QR contact card's address
+     *
+     * @param value
+     */
+    fun updateQRContactCardAddress(value: String) {
+        SettingsRepository.updateQRContactCardAddress(value)
+    }
+
+    fun refreshQRContactCardAddress() {
+        SettingsRepository.refreshQRContactCardAddress()
     }
 }

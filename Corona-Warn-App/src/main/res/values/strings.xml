@@ -75,6 +75,12 @@
     <string name="preference_risk_days_explanation_shown"><xliff:g id="preference">"preference_risk_days_explanation_shown"</xliff:g></string>
     <!-- NOTR -->
     <string name="preference_background_notification"><xliff:g id="preference">"preference_background_notification"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_qr_contact_card_first_name"><xliff:g id="preference">"preference_qr_contact_card_first_name"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_qr_contact_card_last_name"><xliff:g id="preference">"preference_qr_contact_card_last_name"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_qr_contact_card_address"><xliff:g id="preference">"preference_qr_contact_card_address"</xliff:g></string>
 
     <!-- ####################################
                      Generics
@@ -1139,5 +1145,7 @@
     <string name="test_api_calculate_risk_level">"Calculate Risk Level"</string>
     <!-- NOTR -->
     <string name="test_api_switch_background_notifications">"Background Notifications"</string>
+    <string name="main_qr_contact_card_headline">QR Contact Card</string>
+    <string name="main_qr_contact_card_body">Use the QR Code for a swift check-in at restaurants</string>
 
 </resources>

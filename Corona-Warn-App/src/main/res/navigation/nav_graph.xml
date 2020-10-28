@@ -76,6 +76,10 @@
         <action
             android:id="@+id/action_settingsFragment_to_settingsBackgroundPriorityFragment"
             app:destination="@id/settingsBackgroundPriorityFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_settingsQrContactCardFragment"
+            app:destination="@id/settingsQrContactCardFragment"
+            app:popUpTo="@id/settingsFragment" />
     </fragment>
 
     <fragment
@@ -105,6 +109,12 @@
             android:id="@+id/action_settingsResetFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/settingsQrContactCardFragment"
+        android:name="de.rki.coronawarnapp.ui.settings.SettingsQrContactCardFragment"
+        android:label="SettingsQrContactCardFragment"
+        tools:layout="@layout/fragment_settings_qr_contact_card" />
 
     <!-- Information -->
     <fragment

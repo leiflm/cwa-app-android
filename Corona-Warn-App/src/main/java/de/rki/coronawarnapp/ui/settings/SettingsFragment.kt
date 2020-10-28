@@ -61,6 +61,9 @@ class SettingsFragment : Fragment() {
         settingsViewModel.refreshNotificationsRiskEnabled()
         settingsViewModel.refreshNotificationsTestEnabled()
         settingsViewModel.refreshBackgroundPriorityEnabled(requireContext())
+        settingsViewModel.refreshQRContactCardFirstName()
+        settingsViewModel.refreshQRContactCardLastName()
+        settingsViewModel.refreshQRContactCardAddress()
 
         binding.settingsContainer.sendAccessibilityEvent(AccessibilityEvent.TYPE_ANNOUNCEMENT)
     }
@@ -69,6 +72,7 @@ class SettingsFragment : Fragment() {
         val tracingRow = binding.settingsTracing.settingsRow
         val notificationRow = binding.settingsNotifications.settingsRow
         val backgroundPriorityRow = binding.settingsBackgroundPriority.settingsRow
+        val qrContactCardRow = binding.settingsQrContactCard.settingsRow
         val resetRow = binding.settingsReset
         val goBack = binding.settingsHeader.headerButtonBack.buttonIcon
         resetRow.setOnClickListener {
@@ -84,6 +88,11 @@ class SettingsFragment : Fragment() {
         notificationRow.setOnClickListener {
             findNavController().doNavigate(
                 SettingsFragmentDirections.actionSettingsFragmentToSettingsNotificationFragment()
+            )
+        }
+        qrContactCardRow.setOnClickListener {
+            findNavController().doNavigate(
+                SettingsFragmentDirections.actionSettingsFragmentToSettings()
             )
         }
         backgroundPriorityRow.setOnClickListener {

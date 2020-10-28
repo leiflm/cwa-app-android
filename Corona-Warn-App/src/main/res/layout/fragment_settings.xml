@@ -18,10 +18,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/settings_container"
-        android:contentDescription="@string/settings_title"
-        android:focusable="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:contentDescription="@string/settings_title"
+        android:focusable="true">
 
         <include
             android:id="@+id/settings_header"
@@ -94,6 +94,23 @@
                     app:showDivider="@{true}"
                     app:statusText="@{FormatterSettingsHelper.formatStatus(settingsViewModel.isBackgroundPriorityEnabled())}"
                     app:subtitle="@{@string/settings_background_priority_title}"
+                    app:tracingViewModel="@{tracingViewModel}" />
+
+                <include
+                    android:id="@+id/settings_qr_contact_card"
+                    layout="@layout/include_setting_row"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_normal"
+                    app:body="@{@string/settings_qr_contact_card}"
+                    app:color="@{FormatterSettingsHelper.formatSettingsTracingIconColor(tracingViewModel.isTracingEnabled(), settingsViewModel.isBluetoothEnabled(), settingsViewModel.isConnectionEnabled(), settingsViewModel.isLocationEnabled())}"
+                    app:icon="@{FormatterSettingsHelper.formatSettingsTracingIcon(tracingViewModel.isTracingEnabled(), settingsViewModel.isBluetoothEnabled(), settingsViewModel.isConnectionEnabled(), settingsViewModel.isLocationEnabled())}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:showDivider="@{true}"
+                    app:statusText="@{@string/settings_contact_car}"
+                    app:subtitle="@{@string/settings_tracing_title}"
                     app:tracingViewModel="@{tracingViewModel}" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout

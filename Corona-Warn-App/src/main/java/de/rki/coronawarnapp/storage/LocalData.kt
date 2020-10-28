@@ -534,6 +534,78 @@ object LocalData {
         )
     }
 
+    /**
+     * Gets the first name for the contact qr code
+     */
+    fun qrContactCardFirstName(): String? = getSharedPreferenceInstance().getString(
+        CoronaWarnApplication.getAppContext()
+            .getString(R.string.preference_qr_contact_card_first_name),
+        null
+    )
+
+    /**
+     * Sets the first name for the contact qr code
+     *
+     * @param value first name as string
+     */
+    fun qrContactCardFirstName(value: String?) {
+        getSharedPreferenceInstance().edit(true) {
+            putString(
+                CoronaWarnApplication.getAppContext()
+                    .getString(R.string.preference_qr_contact_card_first_name),
+                value
+            )
+        }
+    }
+
+    /**
+     * Gets the last name for the contact qr code
+     */
+    fun qrContactCardLastName(): String? = getSharedPreferenceInstance().getString(
+        CoronaWarnApplication.getAppContext()
+            .getString(R.string.preference_qr_contact_card_last_name),
+        null
+    )
+
+    /**
+     * Sets the last name for the contact qr code
+     *
+     * @param value last name as string
+     */
+    fun qrContactCardLastName(value: String?) {
+        getSharedPreferenceInstance().edit(true) {
+            putString(
+                CoronaWarnApplication.getAppContext()
+                    .getString(R.string.preference_qr_contact_card_last_name),
+                value
+            )
+        }
+    }
+
+    /**
+     * Gets the address for the contact qr code
+     */
+    fun qrContactCardAddress(): String? = getSharedPreferenceInstance().getString(
+        CoronaWarnApplication.getAppContext()
+            .getString(R.string.preference_qr_contact_card_address),
+        null
+    )
+
+    /**
+     * Sets the address for the contact qr code
+     *
+     * @param value address as string
+     */
+    fun qrContactCardAddress(value: String?) {
+        getSharedPreferenceInstance().edit(true) {
+            putString(
+                CoronaWarnApplication.getAppContext()
+                    .getString(R.string.preference_qr_contact_card_address),
+                value
+            )
+        }
+    }
+
     /****************************************************
      * SUBMISSION DATA
      ****************************************************/
