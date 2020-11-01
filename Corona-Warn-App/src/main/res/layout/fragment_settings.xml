@@ -102,15 +102,15 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_normal"
-                    app:body="@{@string/settings_qr_contact_card}"
+                    app:body="@{@string/settings_qr_contact_card_body}"
                     app:color="@{FormatterSettingsHelper.formatSettingsTracingIconColor(tracingViewModel.isTracingEnabled(), settingsViewModel.isBluetoothEnabled(), settingsViewModel.isConnectionEnabled(), settingsViewModel.isLocationEnabled())}"
                     app:icon="@{FormatterSettingsHelper.formatSettingsTracingIcon(tracingViewModel.isTracingEnabled(), settingsViewModel.isBluetoothEnabled(), settingsViewModel.isConnectionEnabled(), settingsViewModel.isLocationEnabled())}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/settings_background_priority"
                     app:showDivider="@{true}"
-                    app:statusText="@{@string/settings_contact_car}"
-                    app:subtitle="@{@string/settings_tracing_title}"
+                    app:statusText="@{@string/settings_qr_contact_card_address}"
+                    app:subtitle="@{@string/settings_qr_contact_card_title}"
                     app:tracingViewModel="@{tracingViewModel}" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -120,7 +120,7 @@
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/settings_background_priority">
+                    app:layout_constraintTop_toBottomOf="@+id/settings_qr_contact_card">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="0dp"

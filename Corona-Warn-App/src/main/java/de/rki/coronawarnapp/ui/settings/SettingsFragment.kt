@@ -92,7 +92,7 @@ class SettingsFragment : Fragment() {
         }
         qrContactCardRow.setOnClickListener {
             findNavController().doNavigate(
-                SettingsFragmentDirections.actionSettingsFragmentToSettings()
+                SettingsFragmentDirections.actionSettingsFragmentToSettingsQrContactCardFragment()
             )
         }
         backgroundPriorityRow.setOnClickListener {

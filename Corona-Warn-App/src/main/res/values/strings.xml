@@ -633,6 +633,12 @@
     <string name="settings_background_priority_card_button">"Open Device Settings"</string>
     <!-- XHED : settings(background priority) - headline on card about the current status and what to do -->
     <string name="settings_background_priority_card_headline">"Disable prioritized background activity"</string>
+    <!-- XHED: settings(qr contact card) - qr contact page title -->
+    <string name="settings_qr_contact_card_body">"Configure your contact details"</string>
+    <!-- XHED: settings(qr contact card) - qr contact page status -->
+    <string name="settings_qr_contact_card_address">"Foobar Street, 1234 Somewhere"</string>
+    <!-- XBUT: settings - go to contact card configuration -->
+    <string name="settings_qr_contact_card_title">"QR Contact Card"</string>
 
     <!-- ####################################
                App Information
