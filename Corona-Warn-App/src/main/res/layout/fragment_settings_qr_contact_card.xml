@@ -4,11 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
-        <import type="de.rki.coronawarnapp.util.formatter.FormatterHelper" />
-
-        <import type="de.rki.coronawarnapp.util.formatter.FormatterSettingsHelper" />
-
         <variable
             name="settingsViewModel"
             type="de.rki.coronawarnapp.ui.viewmodel.SettingsViewModel" />
@@ -18,7 +13,7 @@
         android:id="@+id/settings_qr_contact_card_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="@string/settings_background_priority_title"
+        android:contentDescription="@string/settings_qr_contact_card_title"
         android:focusable="true">
 
         <include
@@ -30,7 +25,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:title="@{@string/settings_background_priority_title}" />
+            app:title="@{@string/settings_qr_contact_card_title}" />
 
         <ScrollView
             android:layout_width="@dimen/match_constraint"
@@ -39,53 +34,46 @@
             app:layout_constraintBottom_toBottomOf="@+id/guideline_bottom"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/settings_background_priority_header">
+            app:layout_constraintTop_toBottomOf="@+id/settings_qr_contact_card_header">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <include
-                    android:id="@+id/settings_qr_contact_card_header_details"
-                    layout="@layout/include_information_details"
-                    android:layout_width="@dimen/match_constraint"
+                <EditText
+                    android:id="@+id/textViewFirstName"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    app:body="@{@string/settings_background_priority_body}"
-                    app:headline="@{@string/settings_background_priority_headline}"
-                    app:illustration="@{@drawable/ic_settings_illustration_reset}"
-                    app:illustrationDescription="@{@string/settings_background_priority_illustration_description}"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:singleLine="true"
+                    android:text="@={settingsViewModel.qrContactCardFirstName}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <include
-                    android:id="@+id/settings_switch_row_qr_contact_card"
-                    layout="@layout/include_settings_switch_row"
-                    android:layout_width="@dimen/match_constraint"
+                <EditText
+                    android:id="@+id/textViewLastName"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_small"
-                    app:enabled="@{!settingsViewModel.isBackgroundPriorityEnabled()}"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:singleLine="true"
+                    android:text="@={settingsViewModel.qrContactCardLastName}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/settings_background_priority_header_details"
-                    app:showDivider="@{true}"
-                    app:status="@{settingsViewModel.isBackgroundPriorityEnabled()}"
-                    app:statusText="@{FormatterSettingsHelper.formatStatus(settingsViewModel.isBackgroundPriorityEnabled())}"
-                    app:subtitle="@{@string/settings_background_priority_title}" />
+                    app:layout_constraintTop_toBottomOf="@+id/textViewFirstName" />
 
-                <include
-                    android:id="@+id/settings_tracing_status_connection"
-                    layout="@layout/include_tracing_status_card"
-                    android:layout_width="@dimen/match_constraint"
+                <EditText
+                    android:id="@+id/editTextPostalAddress"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_small"
-                    android:visibility="@{FormatterHelper.formatVisibility(settingsViewModel.isBackgroundPriorityEnabled())}"
-                    app:body="@{@string/settings_background_priority_card_body}"
-                    app:buttonText="@{@string/settings_background_priority_card_button}"
-                    app:headline="@{@string/settings_background_priority_card_headline}"
+                    android:ems="10"
+                    android:inputType="textPostalAddress"
                     app:layout_constraintEnd_toStartOf="@+id/guideline_card_end"
                     app:layout_constraintStart_toStartOf="@+id/guideline_card_start"
-                    app:layout_constraintTop_toBottomOf="@id/settings_switch_row_background_priority" />
+                    app:layout_constraintTop_toBottomOf="@+id/textViewLastName"
+                    android:text="@={settingsViewModel.qrContactCardAddress}" />
 
                 <include layout="@layout/merge_guidelines_side" />
 
@@ -102,37 +90,5 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_end="@dimen/guideline_bottom" />
 
-        <TextView
-            android:id="@+id/textViewFirstName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/preference_qr_contact_card_first_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/settings_qr_contact_card_header" />
-
-        <TextView
-            android:id="@+id/textViewLastName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/preference_qr_contact_card_last_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewFirstName" />
-
-        <EditText
-            android:id="@+id/editTextPostalAddress"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPostalAddress"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewLastName"
-            tools:text="@string/preference_qr_contact_card_address" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

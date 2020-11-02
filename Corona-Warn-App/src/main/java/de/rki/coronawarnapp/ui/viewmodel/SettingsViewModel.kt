@@ -2,6 +2,7 @@ package de.rki.coronawarnapp.ui.viewmodel
 
 import android.content.Context
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import de.rki.coronawarnapp.storage.SettingsRepository
 
@@ -51,21 +52,21 @@ class SettingsViewModel : ViewModel() {
      *
      * @see SettingsRepository.qrContactCardFirstName
      */
-    val qrContactCardFirstName: LiveData<String> = SettingsRepository.qrContactCardFirstName
+    val qrContactCardFirstName: MutableLiveData<String> = SettingsRepository.qrContactCardFirstName
 
     /**
      * Update the QR contact card's last name value
      *
      * @see SettingsRepository.qrContactCardLastName
      */
-    val qrContactCardLastName: LiveData<String> = SettingsRepository.qrContactCardLastName
+    val qrContactCardLastName: MutableLiveData<String> = SettingsRepository.qrContactCardLastName
 
     /**
      * Update the QR contact card's address value
      *
      * @see SettingsRepository.qrContactCardAddress
      */
-    val qrContactCardAddress: LiveData<String> = SettingsRepository.qrContactCardAddress
+    val qrContactCardAddress: MutableLiveData<String> = SettingsRepository.qrContactCardAddress
 
     /**
      * Refresher and toggles for settings
