@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/textViewFirstName"
+                    android:id="@+id/editTextFirstName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -53,7 +53,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/textViewLastName"
+                    android:id="@+id/editTextLastName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -62,7 +62,7 @@
                     android:text="@={settingsViewModel.qrContactCardLastName}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textViewFirstName" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTextFirstName" />
 
                 <EditText
                     android:id="@+id/editTextPostalAddress"
@@ -72,7 +72,7 @@
                     android:inputType="textPostalAddress"
                     app:layout_constraintEnd_toStartOf="@+id/guideline_card_end"
                     app:layout_constraintStart_toStartOf="@+id/guideline_card_start"
-                    app:layout_constraintTop_toBottomOf="@+id/textViewLastName"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextLastName"
                     android:text="@={settingsViewModel.qrContactCardAddress}" />
 
                 <include layout="@layout/merge_guidelines_side" />

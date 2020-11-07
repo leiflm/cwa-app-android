@@ -5,8 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
+import de.rki.coronawarnapp.R
 import de.rki.coronawarnapp.databinding.FragmentSettingsQrContactCardBinding
 import de.rki.coronawarnapp.ui.main.MainActivity
 import de.rki.coronawarnapp.ui.viewmodel.SettingsViewModel
@@ -44,6 +48,7 @@ class SettingsQrContactCardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        addMutableLiveDataObservers()
         setButtonOnClickListener()
     }
 
@@ -54,6 +59,24 @@ class SettingsQrContactCardFragment : Fragment() {
         settingsViewModel.refreshQRContactCardFirstName()
         settingsViewModel.refreshQRContactCardLastName()
         settingsViewModel.refreshQRContactCardAddress()
+    }
+
+    private fun addMutableLiveDataObservers() {
+        settingsViewModel.qrContactCardFirstName.observe(viewLifecycleOwner, Observer<String> {
+                newValue ->
+            settingsViewModel.updateQRContactCardFirstName(newValue)
+        }
+        )
+        settingsViewModel.qrContactCardLastName.observe(viewLifecycleOwner, Observer<String> {
+                    newValue ->
+                settingsViewModel.updateQRContactCardLastName(newValue)
+            }
+        )
+        settingsViewModel.qrContactCardAddress.observe(viewLifecycleOwner, Observer<String> {
+                newValue ->
+            settingsViewModel.updateQRContactCardAddress(newValue)
+        }
+        )
     }
 
     private fun setButtonOnClickListener() {

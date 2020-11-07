@@ -52,21 +52,21 @@ class SettingsViewModel : ViewModel() {
      *
      * @see SettingsRepository.qrContactCardFirstName
      */
-    val qrContactCardFirstName: MutableLiveData<String> = SettingsRepository.qrContactCardFirstName
+    val qrContactCardFirstName = SettingsRepository.qrContactCardFirstName
 
     /**
      * Update the QR contact card's last name value
      *
      * @see SettingsRepository.qrContactCardLastName
      */
-    val qrContactCardLastName: MutableLiveData<String> = SettingsRepository.qrContactCardLastName
+    val qrContactCardLastName = SettingsRepository.qrContactCardLastName
 
     /**
      * Update the QR contact card's address value
      *
      * @see SettingsRepository.qrContactCardAddress
      */
-    val qrContactCardAddress: MutableLiveData<String> = SettingsRepository.qrContactCardAddress
+    val qrContactCardAddress = SettingsRepository.qrContactCardAddress
 
     /**
      * Refresher and toggles for settings

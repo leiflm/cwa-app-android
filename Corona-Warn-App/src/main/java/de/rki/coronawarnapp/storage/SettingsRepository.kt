@@ -144,7 +144,6 @@ object SettingsRepository {
      */
     fun updateQRContactCardFirstName(value: String) {
         LocalData.qrContactCardFirstName(value)
-        refreshQRContactCardFirstName()
     }
 
     /**
@@ -159,7 +158,6 @@ object SettingsRepository {
      */
     fun updateQRContactCardLastName(value: String) {
         LocalData.qrContactCardLastName(value)
-        refreshQRContactCardLastName()
     }
 
     /**
@@ -174,7 +172,6 @@ object SettingsRepository {
      */
     fun updateQRContactCardAddress(value: String) {
         LocalData.qrContactCardAddress(value)
-        refreshQRContactCardAddress()
     }
     
     /**
