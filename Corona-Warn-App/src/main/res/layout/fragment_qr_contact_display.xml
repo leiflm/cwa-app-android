@@ -9,22 +9,19 @@
             type="de.rki.coronawarnapp.ui.viewmodel.QRContactDetailsViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/qr_contact_display_container"
+    <RelativeLayout
+        android:id="@+id/layoutQRContactDisplay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="@string/main_qr_contact_display_title"
-        android:focusable="true">
+        android:padding="10dp">
 
 
         <ImageView
             android:id="@+id/imageViewQRContactDisplay"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_main_share"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 </layout>

@@ -46,8 +46,11 @@ class QRContactDisplayFragment : Fragment() {
         qrContactDetailsViewModel.refreshQRContactCardAddress()
         var qrCodeImageView = binding.imageViewQRContactDisplay
         val qrString: String = "${qrContactDetailsViewModel.qrContactCardFirstName.value}, ${qrContactDetailsViewModel.qrContactCardLastName.value}, ${qrContactDetailsViewModel.qrContactCardAddress.value}"
-        val qrCode = barcodeEncoder.encodeBitmap(qrString, BarcodeFormat.QR_CODE, 400, 400)
-        qrCodeImageView.setImageBitmap(qrCode)
+        binding.layoutQRContactDisplay.post {
+            val width = binding.layoutQRContactDisplay.width
+            val qrCode = barcodeEncoder.encodeBitmap(qrString, BarcodeFormat.QR_CODE, width, width)
+            qrCodeImageView.setImageBitmap(qrCode)
+        }
     }
 
 }
