@@ -7,6 +7,9 @@
         <variable
             name="settingsViewModel"
             type="de.rki.coronawarnapp.ui.viewmodel.SettingsViewModel" />
+        <variable
+            name="qrContactDetailsViewModel"
+            type="de.rki.coronawarnapp.ui.viewmodel.QRContactDetailsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -47,7 +50,7 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:singleLine="true"
-                    android:text="@={settingsViewModel.qrContactCardFirstName}"
+                    android:text="@={qrContactDetailsViewModel.qrContactCardFirstName}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -59,7 +62,7 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:singleLine="true"
-                    android:text="@={settingsViewModel.qrContactCardLastName}"
+                    android:text="@={qrContactDetailsViewModel.qrContactCardLastName}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/editTextFirstName" />
@@ -73,7 +76,7 @@
                     app:layout_constraintEnd_toStartOf="@+id/guideline_card_end"
                     app:layout_constraintStart_toStartOf="@+id/guideline_card_start"
                     app:layout_constraintTop_toBottomOf="@+id/editTextLastName"
-                    android:text="@={settingsViewModel.qrContactCardAddress}" />
+                    android:text="@={qrContactDetailsViewModel.qrContactCardAddress}" />
 
                 <include layout="@layout/merge_guidelines_side" />
 

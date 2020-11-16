@@ -16,6 +16,7 @@ import de.rki.coronawarnapp.risk.TimeVariables
 import de.rki.coronawarnapp.storage.LocalData
 import de.rki.coronawarnapp.timer.TimerHelper
 import de.rki.coronawarnapp.ui.doNavigate
+import de.rki.coronawarnapp.ui.viewmodel.QRContactDetailsViewModel
 import de.rki.coronawarnapp.ui.viewmodel.SettingsViewModel
 import de.rki.coronawarnapp.ui.viewmodel.SubmissionViewModel
 import de.rki.coronawarnapp.ui.viewmodel.TracingViewModel
@@ -133,11 +134,14 @@ class MainFragment : Fragment() {
         binding.mainRisk.riskCardButtonEnableTracing.setOnClickListener {
             findNavController().doNavigate(MainFragmentDirections.actionMainFragmentToSettingsTracingFragment())
         }
+        binding.mainContactQrCard.mainQrContactDisplay.setOnClickListener {
+            findNavController().doNavigate(MainFragmentDirections.actionMainFragmentToQrContactDisplayFragment())
+        }
         binding.mainAbout.mainCard.setOnClickListener {
             ExternalActionHelper.openUrl(this, requireContext().getString(R.string.main_about_link))
         }
-        binding.mainHeaderShare.buttonIcon.setOnClickListener {
-            findNavController().doNavigate(MainFragmentDirections.actionMainFragmentToMainSharingFragment())
+        binding.mainAbout.mainCard.setOnClickListener {
+            ExternalActionHelper.openUrl(this, requireContext().getString(R.string.main_about_link))
         }
         binding.mainHeaderOptionsMenu.buttonIcon.setOnClickListener {
             showPopup(it)

@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import de.rki.coronawarnapp.R
 import de.rki.coronawarnapp.databinding.FragmentSettingsQrContactCardBinding
 import de.rki.coronawarnapp.ui.main.MainActivity
+import de.rki.coronawarnapp.ui.viewmodel.QRContactDetailsViewModel
 import de.rki.coronawarnapp.ui.viewmodel.SettingsViewModel
 
 /**
@@ -27,6 +28,7 @@ class SettingsQrContactCardFragment : Fragment() {
     }
 
     private val settingsViewModel: SettingsViewModel by activityViewModels()
+    private val qrContactDetailsViewModel: QRContactDetailsViewModel by activityViewModels()
     private var _binding: FragmentSettingsQrContactCardBinding? = null
     private val binding: FragmentSettingsQrContactCardBinding get() = _binding!!
 
@@ -36,6 +38,7 @@ class SettingsQrContactCardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentSettingsQrContactCardBinding.inflate(inflater)
+        binding.qrContactDetailsViewModel = qrContactDetailsViewModel
         binding.settingsViewModel = settingsViewModel
         binding.lifecycleOwner = this
         return binding.root
@@ -56,25 +59,25 @@ class SettingsQrContactCardFragment : Fragment() {
         super.onResume()
         binding.settingsQrContactCardContainer.sendAccessibilityEvent(AccessibilityEvent.TYPE_ANNOUNCEMENT)
         // refresh required data
-        settingsViewModel.refreshQRContactCardFirstName()
-        settingsViewModel.refreshQRContactCardLastName()
-        settingsViewModel.refreshQRContactCardAddress()
+        qrContactDetailsViewModel.refreshQRContactCardFirstName()
+        qrContactDetailsViewModel.refreshQRContactCardLastName()
+        qrContactDetailsViewModel.refreshQRContactCardAddress()
     }
 
     private fun addMutableLiveDataObservers() {
-        settingsViewModel.qrContactCardFirstName.observe(viewLifecycleOwner, Observer<String> {
+        qrContactDetailsViewModel.qrContactCardFirstName.observe(viewLifecycleOwner, Observer<String> {
                 newValue ->
-            settingsViewModel.updateQRContactCardFirstName(newValue)
+            qrContactDetailsViewModel.updateQRContactCardFirstName(newValue)
         }
         )
-        settingsViewModel.qrContactCardLastName.observe(viewLifecycleOwner, Observer<String> {
+        qrContactDetailsViewModel.qrContactCardLastName.observe(viewLifecycleOwner, Observer<String> {
                     newValue ->
-                settingsViewModel.updateQRContactCardLastName(newValue)
+            qrContactDetailsViewModel.updateQRContactCardLastName(newValue)
             }
         )
-        settingsViewModel.qrContactCardAddress.observe(viewLifecycleOwner, Observer<String> {
+        qrContactDetailsViewModel.qrContactCardAddress.observe(viewLifecycleOwner, Observer<String> {
                 newValue ->
-            settingsViewModel.updateQRContactCardAddress(newValue)
+            qrContactDetailsViewModel.updateQRContactCardAddress(newValue)
         }
         )
     }

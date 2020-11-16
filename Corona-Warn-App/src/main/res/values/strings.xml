@@ -244,6 +244,13 @@
     <string name="main_share_illustration_description">"A man shares the Corona-Warn-App with four other persons."</string>
 
     <!-- ####################################
+               Main - QR Contact Details Display
+    ###################################### -->
+
+    <!-- XHED: Display qr contact details title -->
+    <string name="main_qr_contact_display_title">"If configured, displays your contact details as QR code."</string>
+
+    <!-- ####################################
                 Main - Overview
     ###################################### -->
 

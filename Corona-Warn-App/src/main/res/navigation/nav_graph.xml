@@ -39,6 +39,9 @@
             android:id="@+id/action_mainFragment_to_mainOverviewFragment"
             app:destination="@id/mainOverviewFragment" />
         <action
+            android:id="@+id/action_mainFragment_to_qrContactDisplayFragment"
+            app:destination="@id/mainQRContactDisplayFragment" />
+        <action
             android:id="@+id/action_mainFragment_to_testRiskLevelCalculation"
             app:destination="@id/testRiskLevelCalculation" />
     </fragment>
@@ -54,6 +57,12 @@
         android:name="de.rki.coronawarnapp.ui.main.MainOverviewFragment"
         android:label="@layout/fragment_main_overview"
         tools:layout="@layout/fragment_main_overview" />
+
+    <fragment
+        android:id="@+id/mainQRContactDisplayFragment"
+        android:name="de.rki.coronawarnapp.ui.main.QRContactDisplayFragment"
+        android:label="@layout/fragment_qr_contact_display"
+        tools:layout="@layout/fragment_qr_contact_display" />
 
     <!-- Settings -->
     <fragment

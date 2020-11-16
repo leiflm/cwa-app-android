@@ -61,9 +61,6 @@ class SettingsFragment : Fragment() {
         settingsViewModel.refreshNotificationsRiskEnabled()
         settingsViewModel.refreshNotificationsTestEnabled()
         settingsViewModel.refreshBackgroundPriorityEnabled(requireContext())
-        settingsViewModel.refreshQRContactCardFirstName()
-        settingsViewModel.refreshQRContactCardLastName()
-        settingsViewModel.refreshQRContactCardAddress()
 
         binding.settingsContainer.sendAccessibilityEvent(AccessibilityEvent.TYPE_ANNOUNCEMENT)
     }
