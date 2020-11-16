@@ -48,6 +48,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
+                    android:hint="@string/settings_qr_contact_field_first_name"
                     android:inputType="textPersonName"
                     android:singleLine="true"
                     android:text="@={qrContactDetailsViewModel.qrContactCardFirstName}"
@@ -60,6 +61,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
+                    android:hint="@string/settings_qr_contact_field_last_name"
                     android:inputType="textPersonName"
                     android:singleLine="true"
                     android:text="@={qrContactDetailsViewModel.qrContactCardLastName}"
@@ -72,11 +74,12 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
+                    android:hint="@string/settings_qr_contact_field_address"
                     android:inputType="textPostalAddress"
+                    android:text="@={qrContactDetailsViewModel.qrContactCardAddress}"
                     app:layout_constraintEnd_toStartOf="@+id/guideline_card_end"
                     app:layout_constraintStart_toStartOf="@+id/guideline_card_start"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextLastName"
-                    android:text="@={qrContactDetailsViewModel.qrContactCardAddress}" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTextLastName" />
 
                 <include layout="@layout/merge_guidelines_side" />
 

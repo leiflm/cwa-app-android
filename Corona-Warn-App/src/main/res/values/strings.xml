@@ -646,6 +646,12 @@
     <string name="settings_qr_contact_card_address">"Foobar Street, 1234 Somewhere"</string>
     <!-- XBUT: settings - go to contact card configuration -->
     <string name="settings_qr_contact_card_title">"QR Contact Card"</string>
+    <!-- XHED: settings(qr contact settings) - qr contact settings - first name -->
+    <string name="settings_qr_contact_field_first_name">"First Name"</string>
+    <!-- XHED: settings(qr contact settings) - qr contact settings - last name -->
+    <string name="settings_qr_contact_field_last_name">"Last Name"</string>
+    <!-- XHED: settings(qr contact settings) - qr contact settings - address -->
+    <string name="settings_qr_contact_field_address">"Address"</string>
 
     <!-- ####################################
                App Information

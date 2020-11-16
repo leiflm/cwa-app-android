@@ -1135,5 +1135,8 @@
     <string name="test_api_body_other_keys">"Other key"</string>
     <!-- NOTR -->
     <string name="test_api_calculate_risk_level">"Calculate Risk Level"</string>
+    <string name="preference_qr_contact_card_address">Adresse</string>
+    <string name="preference_qr_contact_card_last_name">Nachname</string>
+    <string name="preference_qr_contact_card_first_name">Vorname</string>
 
 </resources>
