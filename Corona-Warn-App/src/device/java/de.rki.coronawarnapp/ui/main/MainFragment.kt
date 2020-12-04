@@ -9,6 +9,7 @@ import android.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import de.rki.coronawarnapp.R
 import de.rki.coronawarnapp.databinding.FragmentMainBinding
@@ -45,6 +46,7 @@ class MainFragment : Fragment() {
     private val tracingViewModel: TracingViewModel by activityViewModels()
     private val settingsViewModel: SettingsViewModel by activityViewModels()
     private val submissionViewModel: SubmissionViewModel by activityViewModels()
+    private val qrSettingsViewModel: QRContactDetailsViewModel by activityViewModels()
     private var _binding: FragmentMainBinding? = null
     private val binding: FragmentMainBinding get() = _binding!!
 
@@ -135,7 +137,13 @@ class MainFragment : Fragment() {
             findNavController().doNavigate(MainFragmentDirections.actionMainFragmentToSettingsTracingFragment())
         }
         binding.mainContactQrCard.mainQrContactDisplay.setOnClickListener {
-            findNavController().doNavigate(MainFragmentDirections.actionMainFragmentToQrContactDisplayFragment())
+            var directionFragment: NavDirections? = null
+            if (qrSettingsViewModel.qrContactDataIsInvalid) {
+                directionFragment = MainFragmentDirections.actionMainFragmentToSettingsQrContactCardFragment()
+            } else {
+                directionFragment = MainFragmentDirections.actionMainFragmentToQrContactDisplayFragment()
+            }
+            findNavController().doNavigate(directionFragment)
         }
         binding.mainAbout.mainCard.setOnClickListener {
             ExternalActionHelper.openUrl(this, requireContext().getString(R.string.main_about_link))

@@ -44,6 +44,9 @@
         <action
             android:id="@+id/action_mainFragment_to_testRiskLevelCalculation"
             app:destination="@id/testRiskLevelCalculation" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingsQrContactCardFragment"
+            app:destination="@id/settingsQrContactCardFragment" />
     </fragment>
 
     <fragment
@@ -87,8 +90,7 @@
             app:destination="@id/settingsBackgroundPriorityFragment" />
         <action
             android:id="@+id/action_settingsFragment_to_settingsQrContactCardFragment"
-            app:destination="@id/settingsQrContactCardFragment"
-            app:popUpTo="@id/settingsFragment" />
+            app:destination="@id/settingsQrContactCardFragment" />
     </fragment>
 
     <fragment

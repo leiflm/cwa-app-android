@@ -27,6 +27,8 @@ class QRContactDetailsViewModel : ViewModel() {
     val qrContactCardAddress = SettingsRepository.qrContactCardAddress
 
 
+    val qrContactDataIsInvalid: Boolean
+        get() = qrContactCardFirstName.value.isNullOrEmpty() || qrContactCardLastName.value.isNullOrEmpty() || qrContactCardAddress.value.isNullOrEmpty()
 
     /**
      * Update QR contact card's first name
