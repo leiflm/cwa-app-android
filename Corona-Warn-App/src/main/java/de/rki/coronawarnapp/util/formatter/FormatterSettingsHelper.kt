@@ -523,3 +523,18 @@ fun formatTracingStatusVisibilityTracing(
                 tracingStatus == TracingStatusHelper.TRACING_INACTIVE
     )
 }
+
+
+
+
+/**
+ * Returns a combined string of name and address for the settings card status
+ *
+ * @param firstName
+ * @param lastName
+ * @param address
+ * @return String
+ */
+fun formatSettingsQRContactDetailsStatusText(firstName: String?, lastName: String?, address: String?): String {
+    return "$firstName $lastName, $address"
+}

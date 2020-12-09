@@ -137,8 +137,8 @@ class MainFragment : Fragment() {
             findNavController().doNavigate(MainFragmentDirections.actionMainFragmentToSettingsTracingFragment())
         }
         binding.mainContactQrCard.mainQrContactDisplay.setOnClickListener {
-            var directionFragment: NavDirections? = null
-            if (qrSettingsViewModel.qrContactDataIsInvalid) {
+            val directionFragment: NavDirections?
+            if (qrSettingsViewModel.qrContactDataIsInvalid()) {
                 directionFragment = MainFragmentDirections.actionMainFragmentToSettingsQrContactCardFragment()
             } else {
                 directionFragment = MainFragmentDirections.actionMainFragmentToQrContactDisplayFragment()

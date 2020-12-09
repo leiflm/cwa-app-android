@@ -14,6 +14,10 @@
             name="settingsViewModel"
             type="de.rki.coronawarnapp.ui.viewmodel.SettingsViewModel" />
 
+        <variable
+            name="qrContactDetailsViewModel"
+            type="de.rki.coronawarnapp.ui.viewmodel.QRContactDetailsViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -101,17 +105,15 @@
                     layout="@layout/include_setting_row"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_normal"
                     app:body="@{@string/settings_qr_contact_card_body}"
-                    app:color="@{FormatterSettingsHelper.formatSettingsTracingIconColor(tracingViewModel.isTracingEnabled(), settingsViewModel.isBluetoothEnabled(), settingsViewModel.isConnectionEnabled(), settingsViewModel.isLocationEnabled())}"
-                    app:icon="@{FormatterSettingsHelper.formatSettingsTracingIcon(tracingViewModel.isTracingEnabled(), settingsViewModel.isBluetoothEnabled(), settingsViewModel.isConnectionEnabled(), settingsViewModel.isLocationEnabled())}"
+                    app:color="@{FormatterSettingsHelper.formatSettingsBackgroundPriorityIconColor(settingsViewModel.isBackgroundPriorityEnabled())}"
+                    app:icon="@{FormatterSettingsHelper.formatSettingsBackgroundPriorityIcon(settingsViewModel.isBackgroundPriorityEnabled())}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/settings_background_priority"
                     app:showDivider="@{true}"
-                    app:statusText="@{@string/settings_qr_contact_card_address}"
-                    app:subtitle="@{@string/settings_qr_contact_card_title}"
-                    app:tracingViewModel="@{tracingViewModel}" />
+                    app:statusText='@{qrContactDetailsViewModel.qrContactDataIsInvalid() ? @string/settings_qr_contact_card_undefined : FormatterSettingsHelper.formatSettingsQRContactDetailsStatusText(qrContactDetailsViewModel.qrContactCardFirstName, qrContactDetailsViewModel.qrContactCardLastName, qrContactDetailsViewModel.qrContactCardAddress)}'
+                    app:subtitle="@{@string/settings_qr_contact_card_subtitle}" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/settings_reset"

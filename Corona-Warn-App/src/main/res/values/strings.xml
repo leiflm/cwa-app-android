@@ -643,7 +643,9 @@
     <!-- XHED: settings(qr contact card) - qr contact page title -->
     <string name="settings_qr_contact_card_body">"Configure your contact details"</string>
     <!-- XHED: settings(qr contact card) - qr contact page status -->
-    <string name="settings_qr_contact_card_address">"Foobar Street, 1234 Somewhere"</string>
+    <string name="settings_qr_contact_card_undefined">"No address specified, yet."</string>
+    <!-- XHED: settings(qr contact card) - qr contact page subtitle -->
+    <string name="settings_qr_contact_card_subtitle">"Set a name and an address."</string>
     <!-- XBUT: settings - go to contact card configuration -->
     <string name="settings_qr_contact_card_title">"QR Contact Card"</string>
     <!-- XHED: settings(qr contact settings) - qr contact settings - first name -->
