@@ -40,11 +40,27 @@ class QRContactDisplayFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        val firstName = qrContactDetailsViewModel.qrContactCardFirstName.value
+        val lastName = qrContactDetailsViewModel.qrContactCardLastName.value
+        val streetAddress = qrContactDetailsViewModel.qrContactCardStreetAddress.value
+        val postalCode = qrContactDetailsViewModel.qrContactCardPostalCode.value
+        val city = qrContactDetailsViewModel.qrContactCardCity.value
         qrContactDetailsViewModel.refreshQRContactCardFirstName()
         qrContactDetailsViewModel.refreshQRContactCardLastName()
-        qrContactDetailsViewModel.refreshQRContactCardAddress()
+        qrContactDetailsViewModel.refreshQRContactCardStreetAddress()
+        qrContactDetailsViewModel.refreshQRContactCardPostalCode()
+        qrContactDetailsViewModel.refreshQRContactCardCity()
+        val vCardTemplate =
+                """
+                BEGIN:VCARD
+                VERSION:3.0
+                N:$lastName;$firstName
+                FN:$firstName $lastName
+                ADR;TYPE=HOME:;;$streetAddress;$city;;$postalCode;Germany
+                END:VCARD
+                """.trimIndent()
         val qrCodeImageView = binding.imageViewQRContactDisplay
-        val qrString = "${qrContactDetailsViewModel.qrContactCardFirstName.value}; ${qrContactDetailsViewModel.qrContactCardLastName.value}; ${qrContactDetailsViewModel.qrContactCardAddress.value}"
+        val qrString = vCardTemplate
         binding.layoutQRContactDisplay.post {
             val width = binding.layoutQRContactDisplay.width
             val qrCode = barcodeEncoder.encodeBitmap(qrString, BarcodeFormat.QR_CODE, width, width)

@@ -20,18 +20,38 @@ class QRContactDetailsViewModel : ViewModel() {
     val qrContactCardLastName = SettingsRepository.qrContactCardLastName
 
     /**
-     * Update the QR contact card's address value
+     * Update the QR contact card's street address value
      *
-     * @see SettingsRepository.qrContactCardAddress
+     * @see SettingsRepository.qrContactCardStreetAddress
      */
-    val qrContactCardAddress = SettingsRepository.qrContactCardAddress
+    val qrContactCardStreetAddress = SettingsRepository.qrContactCardStreetAddress
+
+    /**
+     * Update the QR contact card's postal code value
+     *
+     * @see SettingsRepository.qrContactCardPostalCode
+     */
+    val qrContactCardPostalCode = SettingsRepository.qrContactCardPostalCode
+
+    /**
+     * Update the QR contact card's city value
+     *
+     * @see SettingsRepository.qrContactCardCity
+     */
+    val qrContactCardCity = SettingsRepository.qrContactCardCity
 
 
     fun qrContactDataIsInvalid(): Boolean {
         refreshQRContactCardFirstName()
         refreshQRContactCardLastName()
-        refreshQRContactCardAddress()
-        return qrContactCardFirstName.value.isNullOrEmpty() || qrContactCardLastName.value.isNullOrEmpty() || qrContactCardAddress.value.isNullOrEmpty()
+        refreshQRContactCardStreetAddress()
+        refreshQRContactCardPostalCode()
+        refreshQRContactCardCity()
+        return qrContactCardFirstName.value.isNullOrEmpty()
+                || qrContactCardLastName.value.isNullOrEmpty()
+                || qrContactCardStreetAddress.value.isNullOrEmpty()
+                || qrContactCardPostalCode.value.isNullOrEmpty()
+                || qrContactCardCity.value.isNullOrEmpty()
     }
 
     /**
@@ -39,7 +59,7 @@ class QRContactDetailsViewModel : ViewModel() {
      *
      * @param value
      */
-    fun updateQRContactCardFirstName(value: String) {
+    fun updateQRContactCardFirstName(value: String?) {
         SettingsRepository.updateQRContactCardFirstName(value)
     }
 
@@ -52,7 +72,7 @@ class QRContactDetailsViewModel : ViewModel() {
      *
      * @param value
      */
-    fun updateQRContactCardLastName(value: String) {
+    fun updateQRContactCardLastName(value: String?) {
         SettingsRepository.updateQRContactCardLastName(value)
     }
 
@@ -61,15 +81,41 @@ class QRContactDetailsViewModel : ViewModel() {
     }
 
     /**
-     * Update QR contact card's address
+     * Update QR contact card's street address
      *
      * @param value
      */
-    fun updateQRContactCardAddress(value: String) {
-        SettingsRepository.updateQRContactCardAddress(value)
+    fun updateQRContactCardStreetAddress(value: String?) {
+        SettingsRepository.updateQRContactCardStreetAddress(value)
     }
 
-    fun refreshQRContactCardAddress() {
-        SettingsRepository.refreshQRContactCardAddress()
+    fun refreshQRContactCardStreetAddress() {
+        SettingsRepository.refreshQRContactCardStreetAddress()
+    }
+
+    /**
+     * Update QR contact card's postal code
+     *
+     * @param value
+     */
+    fun updateQRContactCardPostalCode(value: String?) {
+        SettingsRepository.updateQRContactCardPostalCode(value)
+    }
+
+    fun refreshQRContactCardPostalCode() {
+        SettingsRepository.refreshQRContactCardPostalCode()
+    }
+
+    /**
+     * Update QR contact card's city
+     *
+     * @param value
+     */
+    fun updateQRContactCardCity(value: String?) {
+        SettingsRepository.updateQRContactCardCity(value)
+    }
+
+    fun refreshQRContactCardCity() {
+        SettingsRepository.refreshQRContactCardCity()
     }
 }

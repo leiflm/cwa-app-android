@@ -80,7 +80,11 @@
     <!-- NOTR -->
     <string name="preference_qr_contact_card_last_name"><xliff:g id="preference">"preference_qr_contact_card_last_name"</xliff:g></string>
     <!-- NOTR -->
-    <string name="preference_qr_contact_card_address"><xliff:g id="preference">"preference_qr_contact_card_address"</xliff:g></string>
+    <string name="preference_qr_contact_card_street_address"><xliff:g id="preference">"preference_qr_contact_card_street_address"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_qr_contact_card_postal_code"><xliff:g id="preference">"preference_qr_contact_card_postal_code"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_qr_contact_card_city"><xliff:g id="preference">"preference_qr_contact_card_city"</xliff:g></string>
 
     <!-- ####################################
                      Generics
@@ -249,6 +253,8 @@
 
     <!-- XHED: Display qr contact details title -->
     <string name="main_qr_contact_display_title">"If configured, displays your contact details as QR code."</string>
+    <!-- YDES: Display qr contact details description text -->
+    <string name="qr_contact_display_description">"This QR code conveys the following information"</string>
 
     <!-- ####################################
                 Main - Overview
@@ -652,8 +658,12 @@
     <string name="settings_qr_contact_field_first_name">"First Name"</string>
     <!-- XHED: settings(qr contact settings) - qr contact settings - last name -->
     <string name="settings_qr_contact_field_last_name">"Last Name"</string>
-    <!-- XHED: settings(qr contact settings) - qr contact settings - address -->
-    <string name="settings_qr_contact_field_address">"Address"</string>
+    <!-- XHED: settings(qr contact settings) - qr contact settings - street address -->
+    <string name="settings_qr_contact_field_street_address">"Street Address"</string>
+    <!-- XHED: settings(qr contact settings) - qr contact settings - postal code -->
+    <string name="settings_qr_contact_field_postal_code">"Postal Code"</string>
+    <!-- XHED: settings(qr contact settings) - qr contact settings - city -->
+    <string name="settings_qr_contact_field_city">"City"</string>
 
     <!-- ####################################
                App Information

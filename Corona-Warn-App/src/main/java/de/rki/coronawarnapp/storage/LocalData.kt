@@ -583,29 +583,78 @@ object LocalData {
     }
 
     /**
-     * Gets the address for the contact qr code
+     * Gets the street address (street name and number) for the contact qr code
      */
-    fun qrContactCardAddress(): String? = getSharedPreferenceInstance().getString(
+    fun qrContactCardStreetAddress(): String? = getSharedPreferenceInstance().getString(
         CoronaWarnApplication.getAppContext()
-            .getString(R.string.preference_qr_contact_card_address),
+            .getString(R.string.preference_qr_contact_card_street_address),
         null
     )
 
     /**
-     * Sets the address for the contact qr code
+     * Sets the address (street name and number) for the contact qr code
      *
      * @param value address as string
      */
-    fun qrContactCardAddress(value: String?) {
+    fun qrContactCardStreetAddress(value: String?) {
         getSharedPreferenceInstance().edit(true) {
             putString(
                 CoronaWarnApplication.getAppContext()
-                    .getString(R.string.preference_qr_contact_card_address),
+                    .getString(R.string.preference_qr_contact_card_street_address),
                 value
             )
         }
     }
 
+
+    /**
+     * Gets the postal code for the contact qr code
+     */
+    fun qrContactCardPostalCode(): String? = getSharedPreferenceInstance().getString(
+        CoronaWarnApplication.getAppContext()
+            .getString(R.string.preference_qr_contact_card_postal_code),
+        null
+    )
+
+    /**
+     * Sets the postal code for the contact qr code
+     *
+     * @param value address as string
+     */
+    fun qrContactCardPostalCode(value: String?) {
+        getSharedPreferenceInstance().edit(true) {
+            putString(
+                CoronaWarnApplication.getAppContext()
+                    .getString(R.string.preference_qr_contact_card_postal_code),
+                value
+            )
+        }
+    }
+
+
+    /**
+     * Gets the postal code for the contact qr code
+     */
+    fun qrContactCardCity(): String? = getSharedPreferenceInstance().getString(
+        CoronaWarnApplication.getAppContext()
+            .getString(R.string.preference_qr_contact_card_city),
+        null
+    )
+
+    /**
+     * Sets the postal code for the contact qr code
+     *
+     * @param value address as string
+     */
+    fun qrContactCardCity(value: String?) {
+        getSharedPreferenceInstance().edit(true) {
+            putString(
+                CoronaWarnApplication.getAppContext()
+                    .getString(R.string.preference_qr_contact_card_city),
+                value
+            )
+        }
+    }
     /****************************************************
      * SUBMISSION DATA
      ****************************************************/

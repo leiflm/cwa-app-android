@@ -70,17 +70,47 @@
                     app:layout_constraintTop_toBottomOf="@+id/editTextFirstName" />
 
                 <EditText
-                    android:id="@+id/editTextPostalAddress"
+                    android:id="@+id/editTextStreetAddress"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="@string/settings_qr_contact_field_address"
+                    android:hint="@string/settings_qr_contact_field_street_address"
                     android:inputType="textPostalAddress"
-                    android:text="@={qrContactDetailsViewModel.qrContactCardAddress}"
+                    android:text="@={qrContactDetailsViewModel.qrContactCardStreetAddress}"
                     app:layout_constraintEnd_toStartOf="@+id/guideline_card_end"
                     app:layout_constraintStart_toStartOf="@+id/guideline_card_start"
                     app:layout_constraintTop_toBottomOf="@+id/editTextLastName" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="4"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_card_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_card_start"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextStreetAddress"
+                    >
+                        <EditText
+                            android:id="@+id/editTextPostCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="@string/settings_qr_contact_field_postal_code"
+                            android:inputType="textPostalAddress"
+                            android:text="@={qrContactDetailsViewModel.qrContactCardPostalCode}" />
+
+                        <EditText
+                            android:id="@+id/editTextCity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:ems="10"
+                            android:hint="@string/settings_qr_contact_field_city"
+                            android:inputType="textPostalAddress"
+                            android:text="@={qrContactDetailsViewModel.qrContactCardCity}" />
+
+                </LinearLayout>
                 <include layout="@layout/merge_guidelines_side" />
 
                 <include layout="@layout/merge_guidelines_card" />

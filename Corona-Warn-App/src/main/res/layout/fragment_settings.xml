@@ -112,7 +112,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/settings_background_priority"
                     app:showDivider="@{true}"
-                    app:statusText='@{qrContactDetailsViewModel.qrContactDataIsInvalid() ? @string/settings_qr_contact_card_undefined : FormatterSettingsHelper.formatSettingsQRContactDetailsStatusText(qrContactDetailsViewModel.qrContactCardFirstName, qrContactDetailsViewModel.qrContactCardLastName, qrContactDetailsViewModel.qrContactCardAddress)}'
+                    app:statusText='@{qrContactDetailsViewModel.qrContactDataIsInvalid() ? @string/settings_qr_contact_card_undefined : FormatterSettingsHelper.formatSettingsQRContactDetailsStatusText(qrContactDetailsViewModel.qrContactCardFirstName, qrContactDetailsViewModel.qrContactCardLastName, qrContactDetailsViewModel.qrContactCardStreetAddress)}'
                     app:subtitle="@{@string/settings_qr_contact_card_subtitle}" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout

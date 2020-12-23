@@ -31,7 +31,9 @@ object SettingsRepository {
     val manualKeyRetrievalTime = MutableLiveData<Long>()
     val qrContactCardFirstName = MutableLiveData<String>()
     val qrContactCardLastName = MutableLiveData<String>()
-    val qrContactCardAddress = MutableLiveData<String>()
+    val qrContactCardStreetAddress = MutableLiveData<String>()
+    val qrContactCardPostalCode = MutableLiveData<String>()
+    val qrContactCardCity = MutableLiveData<String>()
 
     /**
      * Get the current notifications state. Only relevant for the ui.
@@ -142,7 +144,7 @@ object SettingsRepository {
     /**
      * Set the qr contact first name
      */
-    fun updateQRContactCardFirstName(value: String) {
+    fun updateQRContactCardFirstName(value: String?) {
         LocalData.qrContactCardFirstName(value)
     }
 
@@ -156,7 +158,7 @@ object SettingsRepository {
     /**
      * Set the qr contact last name
      */
-    fun updateQRContactCardLastName(value: String) {
+    fun updateQRContactCardLastName(value: String?) {
         LocalData.qrContactCardLastName(value)
     }
 
@@ -168,16 +170,44 @@ object SettingsRepository {
     }
 
     /**
-     * Set the qr contact address
+     * Set the qr contact street address
      */
-    fun updateQRContactCardAddress(value: String) {
-        LocalData.qrContactCardAddress(value)
+    fun updateQRContactCardStreetAddress(value: String?) {
+        LocalData.qrContactCardStreetAddress(value)
     }
-    
+
     /**
-     * Refresh the qr contact address
+     * Refresh the qr contact street address
      */
-    fun refreshQRContactCardAddress() {
-        qrContactCardAddress.value = LocalData.qrContactCardAddress()
+    fun refreshQRContactCardStreetAddress() {
+        qrContactCardStreetAddress.value = LocalData.qrContactCardStreetAddress()
+    }
+
+    /**
+     * Set the qr contact postal code
+     */
+    fun updateQRContactCardPostalCode(value: String?) {
+        LocalData.qrContactCardPostalCode(value)
+    }
+
+    /**
+     * Refresh the qr contact postal code
+     */
+    fun refreshQRContactCardPostalCode() {
+        qrContactCardPostalCode.value = LocalData.qrContactCardPostalCode()
+    }
+
+    /**
+     * Set the qr contact postal code
+     */
+    fun updateQRContactCardCity(value: String?) {
+        LocalData.qrContactCardCity(value)
+    }
+
+    /**
+     * Refresh the qr contact postal code
+     */
+    fun refreshQRContactCardCity() {
+        qrContactCardCity.value = LocalData.qrContactCardCity()
     }
 }

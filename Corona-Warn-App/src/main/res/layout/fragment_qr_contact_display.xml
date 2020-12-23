@@ -23,5 +23,19 @@
             android:adjustViewBounds="true"
             android:scaleType="centerInside" />
 
+        <TextView
+            android:id="@+id/textViewQRCodeDisplayDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/textViewQRCodeDisplayCodeDataContent"
+            android:layout_alignParentBottom="false"
+            android:text="@string/qr_contact_display_description"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textViewQRCodeDisplayCodeDataContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
     </RelativeLayout>
 </layout>
