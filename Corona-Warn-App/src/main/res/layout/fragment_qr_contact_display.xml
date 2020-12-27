@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <import type="de.rki.coronawarnapp.util.formatter.FormatterSettingsHelper" />
         <variable
             name="qrContactDetailsViewModel"
             type="de.rki.coronawarnapp.ui.viewmodel.QRContactDetailsViewModel" />
@@ -13,13 +14,14 @@
         android:id="@+id/layoutQRContactDisplay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp">
+        android:padding="10dp" >
 
 
         <ImageView
             android:id="@+id/imageViewQRContactDisplay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:adjustViewBounds="true"
             android:scaleType="centerInside" />
 
@@ -27,15 +29,17 @@
             android:id="@+id/textViewQRCodeDisplayDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/textViewQRCodeDisplayCodeDataContent"
-            android:layout_alignParentBottom="false"
-            android:text="@string/qr_contact_display_description"
-            android:textAlignment="center" />
+            android:layout_above="@+id/textViewQRCodeDisplayCodeDataContent"
+            android:layout_below="@id/imageViewQRContactDisplay"
+            android:gravity="bottom|center_horizontal"
+            android:text="@string/qr_contact_display_description" />
 
         <TextView
             android:id="@+id/textViewQRCodeDisplayCodeDataContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true" />
+            android:layout_alignParentBottom="true"
+            android:gravity="top|center_horizontal"
+            android:text='@{qrContactDetailsViewModel.qrContactDataIsInvalid() ? @string/settings_qr_contact_card_undefined : FormatterSettingsHelper.formatSettingsQRContactDetailsQRContent(qrContactDetailsViewModel.qrContactCardFirstName, qrContactDetailsViewModel.qrContactCardLastName, qrContactDetailsViewModel.qrContactCardStreetAddress, qrContactDetailsViewModel.qrContactCardPostalCode, qrContactDetailsViewModel.qrContactCardCity)}' />
     </RelativeLayout>
 </layout>

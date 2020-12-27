@@ -106,13 +106,13 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     app:body="@{@string/settings_qr_contact_card_body}"
-                    app:color="@color/colorAccentTintIcon"
+                    app:color="@{@color/colorAccentTintIcon}"
                     app:icon="@drawable/ic_qr_code"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/settings_background_priority"
                     app:showDivider="@{true}"
-                    app:statusText='@{qrContactDetailsViewModel.qrContactDataIsInvalid() ? @string/settings_qr_contact_card_undefined : FormatterSettingsHelper.formatSettingsQRContactDetailsStatusText(qrContactDetailsViewModel.qrContactCardFirstName, qrContactDetailsViewModel.qrContactCardLastName, qrContactDetailsViewModel.qrContactCardStreetAddress)}'
+                    app:statusText='@{qrContactDetailsViewModel.qrContactDataIsInvalid() ? @string/settings_qr_contact_card_undefined : FormatterSettingsHelper.formatSettingsQRContactDetailsStatusText(qrContactDetailsViewModel.qrContactCardFirstName, qrContactDetailsViewModel.qrContactCardLastName, qrContactDetailsViewModel.qrContactCardStreetAddress, qrContactDetailsViewModel.qrContactCardPostalCode, qrContactDetailsViewModel.qrContactCardCity)}'
                     app:subtitle="@{@string/settings_qr_contact_card_subtitle}" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout

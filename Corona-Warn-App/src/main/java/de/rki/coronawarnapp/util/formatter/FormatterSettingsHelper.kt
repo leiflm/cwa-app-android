@@ -532,9 +532,35 @@ fun formatTracingStatusVisibilityTracing(
  *
  * @param firstName
  * @param lastName
- * @param address
+ * @param streetName
+ * @param postalCode
+ * @param city
  * @return String
  */
-fun formatSettingsQRContactDetailsStatusText(firstName: String?, lastName: String?, address: String?): String {
-    return "$firstName $lastName, $address"
+fun formatSettingsQRContactDetailsStatusText(
+    firstName: String?,
+    lastName: String?,
+    streetName: String?,
+    postalCode: String?,
+    city: String?
+): String {
+    return formatSettingsQRContactDetailsQRContent(firstName, lastName, streetName, postalCode, city)
+}
+
+/**
+ * Returns the address displayed by the qr code
+ *
+ * @param firstName
+ * @param lastName
+ * @param streetName
+ * @param postalCode
+ * @param city
+ * @return String
+ */
+fun formatSettingsQRContactDetailsQRContent(firstName: String?, lastName: String?, streetName: String?, postalCode: String?, city: String?): String {
+    return """
+        $firstName $lastName,
+        $streetName
+        $postalCode $city
+    """.trimIndent()
 }
